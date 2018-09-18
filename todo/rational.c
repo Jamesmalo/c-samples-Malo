@@ -61,23 +61,22 @@ struct RationalNum reduce(struct RationalNum a){  //still working on reduce
     else{
         small == num;
     }
-
-    int i = 2;
-    while(i <= small){
-        if(num % i && denom % i == 0){
-            return i;
-        }
-        else{
-            i++
+    int i;
+    for(int i=2; i <= small; i++){
+        if(num % i == 0  && denom % i == 0){
+            num = num /i;
+            denom = denom/i;
+            i--;
+            
         }
     }
+    
+    double value = (double)num/ (double)denom;
+    struct RationalNum h={num,denom,value}
+    return h;
 
-    num = num/i;
-    denom = num/i;
-    double value = num/denom;
-    return value;
 }
 
 int main(){
-
+    
 }
