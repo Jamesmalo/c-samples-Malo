@@ -9,7 +9,7 @@ struct RationalNum {
     int numerator;
     int denominator;
     double value;
-}
+};
 
 
 //function for adding rational numbers
@@ -20,24 +20,30 @@ struct RationalNum add(struct RationalNum a, struct RationalNum b){
     //return the new struct
     int num = a.numerator * b.denominator + b.numerator * a.denominator;
     int denom = a.denominator * b.denominator;
-    double value = num/denom;
-    return value;
+    double val = num/denom;
+    struct RationalNum answer = {num,denom,val};
+
+    return answer;
 }
 
 //function for subtracting rational numbers
 struct RationalNum subtract(struct RationalNum a, struct RationalNum b){
     int num = a.numerator * b.denominator - b.numerator * a.denominator;
     int denom = a.denominator * b.denominator;
-    double value = num/denom;
-    return value;
+    double val = num/denom;
+    struct RationalNum answer = {num,denom,val};
+
+    return answer;
 }
 
 //function for multiplying rational numbers
 struct RationalNum multiply(struct RationalNum a, struct RationalNum b ){
     int num = a.numerator * b.numerator;
     int denom = a.denominator * b.denominator;
-    double value = num/denom
-    return value;
+    double val = num/denom;
+    struct RationalNum answer = {num,denom,val};
+
+    return answer;
 }
 
 //function for dividing rational numbers
@@ -45,8 +51,10 @@ struct RationalNum multiply(struct RationalNum a, struct RationalNum b ){
 struct RationalNum divide(struct RationalNum a, struct RationalNum b ){
     int num = a.numerator * b.denominator;
     int denom = a.denominator * b.numerator;
-    double value = num/denom;
-    return value;
+    double val = num/denom;
+    struct RationalNum answer = {num,denom,val};
+
+    return answer;
 }
 
 //function for adding rational numbers
@@ -71,12 +79,12 @@ struct RationalNum reduce(struct RationalNum a){  //still working on reduce
         }
     }
     
-    double value = (double)num/ (double)denom;
-    struct RationalNum h={num,denom,value}
-    return h;
+    double val = (double)num/ (double)denom;
+    struct RationalNum answer = {num,denom,val};
+    return answer;
 
 }
 
 int main(){
-    
+    struct FirstNum(5,2,2.5);
 }
