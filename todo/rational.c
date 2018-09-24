@@ -86,5 +86,13 @@ struct RationalNum reduce(struct RationalNum a){  //still working on reduce
 }
 
 int main(){
-    struct FirstNum(5,2,2.5);
+    struct RationalNum a = {5,2,2.5};
+    struct RationalNum b = {8,4,2};
+    struct RationalNum c = multiply(a,b);
+    struct RationalNum d = reduce(a);
+    
+    printf("\n%d",c.numerator);
+    printf("\n%d",c.denominator);
+    printf("\n%d",d);
+    
 }
