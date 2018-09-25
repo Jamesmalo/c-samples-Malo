@@ -20,7 +20,7 @@ struct RationalNum add(struct RationalNum a, struct RationalNum b){
     //return the new struct
     int num = a.numerator * b.denominator + b.numerator * a.denominator;
     int denom = a.denominator * b.denominator;
-    double val = num/denom;
+    double val = (double) num / (double) denom;
     struct RationalNum answer = {num,denom,val};
 
     return answer;
@@ -30,7 +30,7 @@ struct RationalNum add(struct RationalNum a, struct RationalNum b){
 struct RationalNum subtract(struct RationalNum a, struct RationalNum b){
     int num = a.numerator * b.denominator - b.numerator * a.denominator;
     int denom = a.denominator * b.denominator;
-    double val = num/denom;
+    double val = (double) num / (double) denom;
     struct RationalNum answer = {num,denom,val};
 
     return answer;
@@ -40,7 +40,7 @@ struct RationalNum subtract(struct RationalNum a, struct RationalNum b){
 struct RationalNum multiply(struct RationalNum a, struct RationalNum b ){
     int num = a.numerator * b.numerator;
     int denom = a.denominator * b.denominator;
-    double val = num/denom;
+    double val = (double) num / (double) denom;
     struct RationalNum answer = {num,denom,val};
 
     return answer;
@@ -51,7 +51,7 @@ struct RationalNum multiply(struct RationalNum a, struct RationalNum b ){
 struct RationalNum divide(struct RationalNum a, struct RationalNum b ){
     int num = a.numerator * b.denominator;
     int denom = a.denominator * b.numerator;
-    double val = num/denom;
+    double val = (double) num / (double) denom;
     struct RationalNum answer = {num,denom,val};
 
     return answer;
@@ -79,7 +79,7 @@ struct RationalNum reduce(struct RationalNum a){  //still working on reduce
         }
     }
     
-    double val = (double)num/ (double)denom;
+    double val = (double) num / (double) denom;
     struct RationalNum answer = {num,denom,val};
     return answer;
 
@@ -91,8 +91,8 @@ int main(){
     struct RationalNum c = multiply(a,b);
     struct RationalNum d = reduce(a);
     
-    printf("\n%d",c.numerator);
-    printf("\n%d",c.denominator);
-    printf("\n%d",d);
+    //printf("\n%d",c.numerator);
+    //printf("\n%d",c.denominator);
+    printf("\n%d",add(a,b).value);
     
 }
